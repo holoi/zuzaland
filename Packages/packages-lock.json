@@ -24,8 +24,8 @@
       "hash": "c27a931ef21c212686e5abd8bbf4f334a64ec9d5"
     },
     "com.unity.burst": {
-      "version": "1.6.6",
-      "depth": 2,
+      "version": "1.8.2",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1"
@@ -151,12 +151,23 @@
     },
     "com.unity.render-pipelines.core": {
       "version": "12.1.10",
-      "depth": 2,
+      "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.ugui": "1.0.0",
         "com.unity.modules.physics": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
+      }
+    },
+    "com.unity.render-pipelines.universal": {
+      "version": "12.1.10",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.burst": "1.8.2",
+        "com.unity.render-pipelines.core": "12.1.10",
+        "com.unity.shadergraph": "12.1.10"
       }
     },
     "com.unity.searcher": {
@@ -305,6 +316,15 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "com.unity.visualeffectgraph": {
+      "version": "12.1.10",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "12.1.10",
+        "com.unity.render-pipelines.core": "12.1.10"
       }
     },
     "com.unity.visualscripting": {
