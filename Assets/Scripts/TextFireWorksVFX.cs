@@ -67,7 +67,7 @@ public class TextFireWorksVFX : MonoBehaviour
         {
             if (i < 4)
             {
-                if (chars[i] == 21)
+                if (chars[i] == 33)
                 {
                     Index1[i] = 28; // !
                 }
@@ -93,7 +93,7 @@ public class TextFireWorksVFX : MonoBehaviour
                 }
             }else
             {
-                if (chars[i] == 21)
+                if (chars[i] == 33)
                 {
                     Index2[i - 4] = 28; // !
                 }
