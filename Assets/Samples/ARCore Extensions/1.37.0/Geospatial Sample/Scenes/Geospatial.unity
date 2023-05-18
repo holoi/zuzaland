@@ -1893,6 +1893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirePrefab: {fileID: 2396624880742639166, guid: c05874617a7164f56aa6556d2e4828e9, type: 3}
+  m_Offset: {x: 0, y: 0, z: 2}
 --- !u!4 &703579797
 Transform:
   m_ObjectHideFlags: 0
