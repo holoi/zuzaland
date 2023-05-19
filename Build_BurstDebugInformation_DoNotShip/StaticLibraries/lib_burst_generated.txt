@@ -161,6 +161,7 @@ Library: /Users/yuchen/Projects/unity-projects/ZuzalandFireworks/Temp/StagingAre
 --compilation-defines=ARCORE_INTERNAL_USE_CESIUM
 --compilation-defines=ARCORE_INTERNAL_USE_UNITY_MATH
 --compilation-defines=UNITY_ANALYTICS
+--compilation-defines=UGS_LOBBY_EVENTS
 --linker-options=min-ios-version=12.0
 --generate-link-xml=Temp/burst.link.xml
 --temp-folder=/Users/yuchen/Projects/unity-projects/ZuzalandFireworks/Temp/Burst

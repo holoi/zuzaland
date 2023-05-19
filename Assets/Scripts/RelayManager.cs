@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
+using Unity.Services.Lobbies;
+using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using System;
 using Unity.Networking.Transport.Relay;
@@ -20,6 +22,8 @@ public class RelayManager : MonoBehaviour
     [SerializeField] GameObject m_BtnPanel;
 
     public string JoinCode { get; private set; }
+
+    private string m_LobbyId;
 
     private async void Start()
     {
@@ -72,6 +76,16 @@ public class RelayManager : MonoBehaviour
         var relayServerData = new RelayServerData(allocation, "dtls");
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
+        // Lobby
+        try
+        {
+            var createLobbyOptions = new CreateLobbyOptions();
+        }
+        catch (Exception e)
+        {
+
+        }
+
         NetworkManager.Singleton.StartHost();
     }
 
@@ -98,7 +112,43 @@ public class RelayManager : MonoBehaviour
         var relayServerData = new RelayServerData(allocation, "dtls");
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
+        // Lobby
+        try
+        {
+            var createLobbyOptions = new CreateLobbyOptions();
+            createLobbyOptions.IsPrivate = false;
+            createLobbyOptions.Data = new Dictionary<string, DataObject>()
+            {
+                {
+                    "JoinCode", new DataObject(
+                        visibility: DataObject.VisibilityOptions.Member,
+                        value: JoinCode
+                    )
+                }
+            };
+
+            Lobby lobby = await Lobbies.Instance.CreateLobbyAsync("My Lobby", m_MaxConnections, createLobbyOptions);
+            m_LobbyId = lobby.Id;
+            StartCoroutine(HeartbeatLobbyCoroutine(15f));
+
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.Log(e);
+            throw;
+        }
+
         NetworkManager.Singleton.StartClient();
+    }
+
+    private IEnumerator HeartbeatLobbyCoroutine(float waitTimeSeconds)
+    {
+        var delay = new WaitForSeconds(waitTimeSeconds);
+        while (true)
+        {
+            Lobbies.Instance.SendHeartbeatPingAsync(m_LobbyId);
+            yield return delay;
+        }
     }
 
     public void OnChangeJoinCode(string code)
