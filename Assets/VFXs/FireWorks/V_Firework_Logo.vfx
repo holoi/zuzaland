@@ -40,9 +40,9 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 0
+    x: 944
     y: -1582
-    width: 8512
+    width: 7568
     height: 5191
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -1101,7 +1101,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 2.5
     m_Space: 2147483647
   m_Property:
     name: A
@@ -1135,7 +1135,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 2
+      m_SerializableObject: 3.5
     m_Space: 2147483647
   m_Property:
     name: B

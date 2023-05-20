@@ -6,6 +6,13 @@
       "scopes": [
         "com.cesium.unity"
       ]
+    },
+    {
+      "name": "Keijiro",
+      "url": "https://registry.npmjs.com",
+      "scopes": [
+        "jp.keijiro"
+      ]
     }
   ],
   "dependencies": {
@@ -28,6 +35,7 @@
     "com.unity.visualeffectgraph": "12.1.10",
     "com.unity.visualscripting": "1.8.0",
     "com.unity.xr.arkit": "4.2.7",
+    "jp.keijiro.vfxgraphassets": "1.2.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
