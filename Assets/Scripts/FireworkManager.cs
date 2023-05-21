@@ -29,7 +29,7 @@ public class FireworkManager : NetworkBehaviour
         var monumentPos = m_Monument.position;
         // Add random deviation
         // Sizheng TODO
-        Vector3 firePos = new Vector3(monumentPos.x + Random.Range(0f, 0f), monumentPos.y, monumentPos.z + Random.Range(0f, 0f));
+        Vector3 firePos = new Vector3(monumentPos.x + Random.Range(-3f, 3f), monumentPos.y, monumentPos.z + Random.Range(-3f, 3f));
 
         var fireworkInstance = Instantiate(m_Firework1Prefab, firePos, Quaternion.identity);
         fireworkInstance.GetComponent<NetworkObject>().Spawn();
@@ -42,7 +42,7 @@ public class FireworkManager : NetworkBehaviour
         var monumentPos = m_Monument.position;
         // Add random deviation
         // Sizheng TODO
-        Vector3 firePos = new Vector3(monumentPos.x + Random.Range(0f, 0f), monumentPos.y, monumentPos.z + Random.Range(0f, 0f));
+        Vector3 firePos = new Vector3(monumentPos.x + Random.Range(-3f, 3f), monumentPos.y, monumentPos.z + Random.Range(-3f, 3f));
 
         var fireworkInstance = Instantiate(m_Firework2Prefab, firePos, Quaternion.identity);
         fireworkInstance.GetComponent<NetworkObject>().Spawn();
@@ -55,11 +55,13 @@ public class FireworkManager : NetworkBehaviour
         var monumentPos = m_Monument.position;
         // Add random deviation
         // Sizheng TODO
-        Vector3 firePos = new Vector3(monumentPos.x + Random.Range(0f, 0f), monumentPos.y, monumentPos.z + Random.Range(0f, 0f));
+        Vector3 firePos = new Vector3(monumentPos.x + Random.Range(-3f, 3f), monumentPos.y, monumentPos.z + Random.Range(-3f, 3f));
 
         var fireworkInstance = Instantiate(m_Firework3Prefab, firePos, Quaternion.identity);
         fireworkInstance.GetComponent<TextFireWorksVFX>().InputText = Firework3InputText;
+        fireworkInstance.GetComponent<TextFireWorksVFX>().SetInputText();
         fireworkInstance.GetComponent<NetworkObject>().Spawn();
+
     }
 
     public void OnChangeFirework3InputText(string text)

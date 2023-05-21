@@ -14,18 +14,25 @@ public class TextFireWorksVFX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+   
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void SetInputText()
+    {
         _vfx = GetComponent<VisualEffect>();
 
         String2Vector(InputText);
 
         _vfx.SetVector4("TextIndex1", Index1);
         _vfx.SetVector4("TextIndex2", Index2);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void String2Vector(string str)
