@@ -1868,7 +1868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &582540840
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1878,8 +1878,8 @@ RectTransform:
   m_GameObject: {fileID: 582540839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 683091023}
   m_RootOrder: 3
@@ -2764,7 +2764,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1471100011}
   - {fileID: 1871546259}
@@ -3299,8 +3299,8 @@ RectTransform:
   m_GameObject: {fileID: 1041456683}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 430750538}
   - {fileID: 1769789002}
@@ -5201,6 +5201,7 @@ GameObject:
   - component: {fileID: 1451910693}
   - component: {fileID: 1451910692}
   - component: {fileID: 1451910696}
+  - component: {fileID: 1451910697}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -5342,6 +5343,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &1451910697
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451910690}
+  m_Enabled: 1
 --- !u!1 &1471100010
 GameObject:
   m_ObjectHideFlags: 0
