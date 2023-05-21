@@ -3,29 +3,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class FireworkManager : MonoBehaviour
+public class FireworkManager : NetworkBehaviour
 {
-    public Vector3 TargetPosition = new(0,0,0);
+    [SerializeField] GameObject m_Firework1Prefab;
 
-    [SerializeField] GameObject m_FirePrefab;
+    [SerializeField] GameObject m_Firework2Prefab;
 
-    [SerializeField] Vector3 m_Offset = new(0f, 0f, 2f);
+    [SerializeField] GameObject m_Firework3Prefab;
 
-    public void Fire()
+    [SerializeField] Transform m_Monument;
+
+    [SerializeField] GameObject m_Firework3Window;
+
+    public string Firework3InputText { get; private set; }
+
+    public override void OnNetworkSpawn()
     {
-        var camera = Camera.main;
-        Debug.Log($"Camera position: {camera.transform.position}");
-        Debug.Log($"Camera rotation: {camera.transform.rotation}");
-
-        //var fixedPosition = camera.transform.position + camera.transform.rotation * m_Offset;
-        var fixedPosition = TargetPosition + RandomVector3(-1f,1f);
-
-        var firework = Instantiate(m_FirePrefab, fixedPosition, camera.transform.rotation);
-        firework.GetComponent<NetworkObject>().Spawn();
+        base.OnNetworkSpawn();
     }
 
-    Vector3 RandomVector3(float min, float max)
+    [ServerRpc(RequireOwnership = false)]
+    public void Fire1ServerRpc()
     {
-        return new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max));
+        // Monument ground center position
+        var monumentPos = m_Monument.position;
+        // Add random deviation
+        // Sizheng TODO
+        Vector3 firePos = new Vector3(monumentPos.x + Random.Range(0f, 0f), monumentPos.y, monumentPos.z + Random.Range(0f, 0f));
+
+        var fireworkInstance = Instantiate(m_Firework1Prefab, firePos, Quaternion.identity);
+        fireworkInstance.GetComponent<NetworkObject>().Spawn();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void Fire2ServerRpc()
+    {
+        // Monument ground center position
+        var monumentPos = m_Monument.position;
+        // Add random deviation
+        // Sizheng TODO
+        Vector3 firePos = new Vector3(monumentPos.x + Random.Range(0f, 0f), monumentPos.y, monumentPos.z + Random.Range(0f, 0f));
+
+        var fireworkInstance = Instantiate(m_Firework2Prefab, firePos, Quaternion.identity);
+        fireworkInstance.GetComponent<NetworkObject>().Spawn();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void Fire3ServerRpc()
+    {
+        // Monument ground center position
+        var monumentPos = m_Monument.position;
+        // Add random deviation
+        // Sizheng TODO
+        Vector3 firePos = new Vector3(monumentPos.x + Random.Range(0f, 0f), monumentPos.y, monumentPos.z + Random.Range(0f, 0f));
+
+        var fireworkInstance = Instantiate(m_Firework3Prefab, firePos, Quaternion.identity);
+        fireworkInstance.GetComponent<TextFireWorksVFX>().InputText = Firework3InputText;
+        fireworkInstance.GetComponent<NetworkObject>().Spawn();
+    }
+
+    public void OnChangeFirework3InputText(string text)
+    {
+        Firework3InputText = text;
+        Fire3ServerRpc();
+        m_Firework3Window.SetActive(false);
+    }
+
+    public void OnShowFirework3Window()
+    {
+        m_Firework3Window.SetActive(true);
     }
 }

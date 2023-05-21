@@ -152,7 +152,9 @@ public class RelayManager : MonoBehaviour
         if (clientId == NetworkManager.Singleton.LocalClientId)
         {
             Debug.Log($"JoinCode: {JoinCode}");
-            SceneManager.LoadSceneAsync("Geospatial", LoadSceneMode.Single);
+            if (NetworkManager.Singleton.IsHost)
+                NetworkManager.Singleton.SceneManager.LoadScene("Geospatial", LoadSceneMode.Single);
+            //SceneManager.LoadSceneAsync("Geospatial", LoadSceneMode.Single);
         }
     }
 }
