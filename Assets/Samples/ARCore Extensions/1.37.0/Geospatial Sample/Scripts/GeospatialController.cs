@@ -1151,12 +1151,12 @@ namespace Google.XR.ARCoreExtensions.Samples.Geospatial
 
             if (anchor != null)
             {
-                GameObject anchorGO = history.AnchorType == AnchorType.Geospatial ?
-                    Instantiate(GeospatialPrefab, anchor.transform) :
-                    Instantiate(TerrainPrefab, anchor.transform);
-                anchor.gameObject.SetActive(!terrain);
-                anchorGO.transform.parent = anchor.gameObject.transform;
-                _anchorObjects.Add(anchor.gameObject);
+                //GameObject anchorGO = history.AnchorType == AnchorType.Geospatial ?
+                //    Instantiate(GeospatialPrefab, anchor.transform) :
+                //    Instantiate(TerrainPrefab, anchor.transform);
+                //anchor.gameObject.SetActive(!terrain);
+                //anchorGO.transform.parent = anchor.gameObject.transform;
+                //_anchorObjects.Add(anchor.gameObject);
             }
             else
             {
