@@ -175,12 +175,13 @@ MonoBehaviour:
   _ShootAudios:
   - {fileID: 8300000, guid: da2359a00396347959dfae8ad1152b6a, type: 3}
   - {fileID: 8300000, guid: 6c8f43101549c4393ba5bb635fa2f589, type: 3}
+  - {fileID: 8300000, guid: a7f13ab014e2b48d78af95197adf54a7, type: 3}
   _ExplodeAudios:
   - {fileID: 8300000, guid: 48cb2b467852c4777adc16ac3cf8f139, type: 3}
   - {fileID: 8300000, guid: 3a87dd13b69544f67b5dcbe4483e7421, type: 3}
   - {fileID: 8300000, guid: 354a79fa1ddf549fb9ed9216bf267bd8, type: 3}
   m_Lifetime: 8
-  m_Lifetime_Vfx: 4
+  m_Lifetime_Vfx: 3
 --- !u!114 &7974094769590049203
 MonoBehaviour:
   m_ObjectHideFlags: 0
