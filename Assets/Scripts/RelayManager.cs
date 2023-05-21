@@ -12,16 +12,17 @@ using Unity.Netcode.Transports.UTP;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class RelayManager : MonoBehaviour
 {
     [SerializeField] int m_MaxConnections = 8;
 
-    [SerializeField] GameObject m_ConnectingPanel;
+    [SerializeField] GameObject m_InitPanel;
 
-    [SerializeField] GameObject m_BtnPanel;
+    [SerializeField] GameObject m_LobbyPanel;
 
-    public string JoinCode { get; private set; }
+    public string JoinCode { get; set; }
 
     private string m_LobbyId;
 
@@ -37,8 +38,8 @@ public class RelayManager : MonoBehaviour
 
             NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
 
-            m_ConnectingPanel.SetActive(false);
-            m_BtnPanel.SetActive(true);
+            m_InitPanel.SetActive(false);
+            m_LobbyPanel.SetActive(true);
         }
         catch (Exception e)
         {
@@ -76,43 +77,7 @@ public class RelayManager : MonoBehaviour
         var relayServerData = new RelayServerData(allocation, "dtls");
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
-        // Lobby
-        try
-        {
-            var createLobbyOptions = new CreateLobbyOptions();
-        }
-        catch (Exception e)
-        {
-
-        }
-
-        NetworkManager.Singleton.StartHost();
-    }
-
-    public async void StartClient()
-    {
-        if (JoinCode == null)
-        {
-            Debug.Log("Please provide a JoinCode to connect");
-            return;
-        }
-
-        JoinAllocation allocation;
-
-        try
-        {
-            allocation = await RelayService.Instance.JoinAllocationAsync(JoinCode);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"Relay get join code request failed {e.Message}");
-            throw;
-        }
-
-        var relayServerData = new RelayServerData(allocation, "dtls");
-        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-
-        // Lobby
+        // Create a lobby
         try
         {
             var createLobbyOptions = new CreateLobbyOptions();
@@ -138,6 +103,32 @@ public class RelayManager : MonoBehaviour
             throw;
         }
 
+        NetworkManager.Singleton.StartHost();
+    }
+
+    public async Task StartClient()
+    {
+        if (JoinCode == null)
+        {
+            Debug.Log("Please provide a JoinCode to connect");
+            return;
+        }
+
+        JoinAllocation allocation;
+
+        try
+        {
+            allocation = await RelayService.Instance.JoinAllocationAsync(JoinCode);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Relay get join code request failed {e.Message}");
+            throw;
+        }
+
+        var relayServerData = new RelayServerData(allocation, "dtls");
+        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
         NetworkManager.Singleton.StartClient();
     }
 
@@ -158,8 +149,10 @@ public class RelayManager : MonoBehaviour
 
     private void OnClientConnected(ulong clientId)
     {
-        m_BtnPanel.SetActive(false);
-        Debug.Log($"JoinCode: {JoinCode}");
-        SceneManager.LoadSceneAsync("Geospatial", LoadSceneMode.Single);
+        if (clientId == NetworkManager.Singleton.LocalClientId)
+        {
+            Debug.Log($"JoinCode: {JoinCode}");
+            SceneManager.LoadSceneAsync("Geospatial", LoadSceneMode.Single);
+        }
     }
 }
