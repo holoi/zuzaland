@@ -22,6 +22,8 @@ public class RelayManager : MonoBehaviour
 
     [SerializeField] GameObject m_LobbyPanel;
 
+    [SerializeField] GameObject m_ConnectingPrompt;
+
     public string JoinCode { get; set; }
 
     private string m_LobbyId;
@@ -50,8 +52,15 @@ public class RelayManager : MonoBehaviour
         // Hide the connecting panel and show the menu panel
     }
 
+    private void OnDestroy()
+    {
+        DeleteLobby();
+    }
+
     public async void StartHost()
     {
+        m_ConnectingPrompt.SetActive(true);
+
         Allocation allocation;
 
         try
@@ -114,6 +123,8 @@ public class RelayManager : MonoBehaviour
             return;
         }
 
+        m_ConnectingPrompt.SetActive(true);
+
         JoinAllocation allocation;
 
         try
@@ -155,6 +166,18 @@ public class RelayManager : MonoBehaviour
             if (NetworkManager.Singleton.IsHost)
                 NetworkManager.Singleton.SceneManager.LoadScene("Geospatial", LoadSceneMode.Single);
             //SceneManager.LoadSceneAsync("Geospatial", LoadSceneMode.Single);
+        }
+    }
+
+    private async void DeleteLobby()
+    {
+        try
+        {
+            await LobbyService.Instance.DeleteLobbyAsync(m_LobbyId);
+        }
+        catch(LobbyServiceException e)
+        {
+            Debug.Log(e);
         }
     }
 }
