@@ -146,6 +146,7 @@ Library: /Users/yuchen/Projects/unity-projects/ZuzalandFireworks/Temp/StagingAre
 --compilation-defines=MODULE_PHYSICS_2D_EXISTS
 --compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
 --compilation-defines=UNITY_UNET_PRESENT
+--compilation-defines=UGS_LOBBY_EVENTS
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=RELAY_SDK_INSTALLED
 --compilation-defines=VFX_HAS_TIMELINE
@@ -158,10 +159,11 @@ Library: /Users/yuchen/Projects/unity-projects/ZuzalandFireworks/Temp/StagingAre
 --compilation-defines=COM_UNITY_MODULES_ANIMATION
 --compilation-defines=COM_UNITY_MODULES_PHYSICS
 --compilation-defines=COM_UNITY_MODULES_PHYSICS2D
+--compilation-defines=VFX_OUTPUTEVENT_PHYSICS
+--compilation-defines=VFX_OUTPUTEVENT_AUDIO
 --compilation-defines=ARCORE_INTERNAL_USE_CESIUM
 --compilation-defines=ARCORE_INTERNAL_USE_UNITY_MATH
 --compilation-defines=UNITY_ANALYTICS
---compilation-defines=UGS_LOBBY_EVENTS
 --linker-options=min-ios-version=12.0
 --generate-link-xml=Temp/burst.link.xml
 --temp-folder=/Users/yuchen/Projects/unity-projects/ZuzalandFireworks/Temp/Burst
