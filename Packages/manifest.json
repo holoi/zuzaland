@@ -18,6 +18,7 @@
   "dependencies": {
     "com.cesium.unity": "1.2.0",
     "com.google.ar.core.arfoundation.extensions": "https://github.com/google-ar/arcore-unity-extensions.git",
+    "com.holoi.xr.holokit": "https://github.com/holoi/holokit-unity-sdk.git",
     "com.unity.collab-proxy": "2.0.1",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.18",
