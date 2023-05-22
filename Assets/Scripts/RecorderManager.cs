@@ -26,6 +26,7 @@ public class RecorderManager : MonoBehaviour
         {
             m_StartBtn.SetActive(false);
             m_StopBtn.SetActive(true);
+            Screen.autorotateToLandscapeLeft = false;
             m_VideoKitRecorder.StartRecording();
         }   
     }
@@ -36,6 +37,7 @@ public class RecorderManager : MonoBehaviour
         {
             m_StartBtn.SetActive(true);
             m_StopBtn.SetActive(false);
+            Screen.autorotateToLandscapeLeft = true;
             m_VideoKitRecorder.StopRecording();
         }   
     }

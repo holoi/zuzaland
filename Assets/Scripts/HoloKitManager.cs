@@ -29,12 +29,12 @@ public class HoloKitManager : MonoBehaviour
         if (m_ScreenOrientation == ScreenOrientation.Portrait)
         {
             m_Canvas.SetActive(true);
-            m_HoloKitCamera.RenderMode = HoloInteractive.XR.HoloKit.RenderMode.Mono;
+            m_HoloKitCamera.ScreenRenderMode = ScreenRenderMode.Mono;
         }
         else if (m_ScreenOrientation == ScreenOrientation.LandscapeLeft)
         {
             m_Canvas.SetActive(false);
-            m_HoloKitCamera.RenderMode = HoloInteractive.XR.HoloKit.RenderMode.Stereo;
+            m_HoloKitCamera.ScreenRenderMode = ScreenRenderMode.Stereo;
         }
     }
 }

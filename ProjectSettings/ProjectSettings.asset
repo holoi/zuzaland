@@ -152,6 +152,13 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: d40b00ad27fa14fc4819fc8487bb41e5, type: 2}
+  - {fileID: 4800000, guid: e7c77f6eaab324a819efdc13b8125a39, type: 3}
+  - {fileID: 11400000, guid: 3c9e25e34422341458b4926087d6f461, type: 2}
+  - {fileID: 11400000, guid: 72d76cc953aba4bd9881c04007139b8e, type: 2}
+  - {fileID: 11400000, guid: df3692a5fc90442c59b27e43e572dd45, type: 2}
+  - {fileID: 11400000, guid: 8a0b233c25ad24ca69a59d3fe423becc, type: 2}
+  - {fileID: -5232041830265847600, guid: ed0f7edb174f44adea7210f955162ddf, type: 2}
   - {fileID: 11400000, guid: 97548a1d1bba2432ead19c45e0706fbe, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
