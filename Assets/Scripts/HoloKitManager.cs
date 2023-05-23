@@ -7,6 +7,8 @@ public class HoloKitManager : MonoBehaviour
 {
     [SerializeField] GameObject m_Canvas;
 
+    [SerializeField] GameObject m_StereoCanvas;
+
     HoloKitCamera m_HoloKitCamera;
 
     ScreenOrientation m_ScreenOrientation = ScreenOrientation.Portrait;
@@ -20,21 +22,45 @@ public class HoloKitManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void SwitchScreenRenderMode()
     {
-        if (m_ScreenOrientation == Screen.orientation)
-            return;
-
-        m_ScreenOrientation = Screen.orientation;
-        if (m_ScreenOrientation == ScreenOrientation.Portrait)
+        if (m_HoloKitCamera.ScreenRenderMode == ScreenRenderMode.Mono)
         {
-            m_Canvas.SetActive(true);
-            m_HoloKitCamera.ScreenRenderMode = ScreenRenderMode.Mono;
-        }
-        else if (m_ScreenOrientation == ScreenOrientation.LandscapeLeft)
-        {
-            m_Canvas.SetActive(false);
             m_HoloKitCamera.ScreenRenderMode = ScreenRenderMode.Stereo;
+            m_Canvas.SetActive(false);
+            m_StereoCanvas.SetActive(true);
+        }
+        else
+        {
+            m_HoloKitCamera.ScreenRenderMode = ScreenRenderMode.Mono;
+            m_Canvas.SetActive(true);
+            m_StereoCanvas.SetActive(false);
         }
     }
+
+    private void Update()
+    {
+        if (m_HoloKitCamera.ScreenRenderMode == ScreenRenderMode.Mono && Screen.orientation != ScreenOrientation.Portrait)
+        {
+            Screen.orientation = ScreenOrientation.Portrait;
+        }
+    }
+
+    //private void Update()
+    //{
+    //    if (m_ScreenOrientation == Screen.orientation)
+    //        return;
+
+    //    m_ScreenOrientation = Screen.orientation;
+    //    if (m_ScreenOrientation == ScreenOrientation.Portrait)
+    //    {
+    //        m_Canvas.SetActive(true);
+    //        m_HoloKitCamera.ScreenRenderMode = ScreenRenderMode.Mono;
+    //    }
+    //    else if (m_ScreenOrientation == ScreenOrientation.LandscapeLeft)
+    //    {
+    //        m_Canvas.SetActive(false);
+    //        m_HoloKitCamera.ScreenRenderMode = ScreenRenderMode.Stereo;
+    //    }
+    //}
 }

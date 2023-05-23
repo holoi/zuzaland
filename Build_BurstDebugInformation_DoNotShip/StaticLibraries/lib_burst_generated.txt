@@ -138,6 +138,7 @@ Library: /Users/yuchen/Projects/unity-projects/ZuzalandFireworks/Temp/StagingAre
 --compilation-defines=ENABLE_BURST_1_0_0_OR_NEWER
 --compilation-defines=USING_ANIMATION_MODULE
 --compilation-defines=USING_PHYSICS2D_MODULE
+--compilation-defines=__INPUTSYSTEM__
 --compilation-defines=PACKAGE_INPUT_SYSTEM_EXISTS
 --compilation-defines=PACKAGE_INPUT_SYSTEM_1_2_0_OR_NEWER_EXISTS
 --compilation-defines=MODULE_AI_EXISTS
