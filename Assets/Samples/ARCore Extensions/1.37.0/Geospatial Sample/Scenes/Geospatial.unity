@@ -863,7 +863,7 @@ MonoBehaviour:
   destination: 2
   prepareOnAwake: 1
   videoMode: 1
-  resolution: 2
+  resolution: 9
   customResolution: {x: 1280, y: 720}
   cameras:
   - {fileID: 1451910691}
