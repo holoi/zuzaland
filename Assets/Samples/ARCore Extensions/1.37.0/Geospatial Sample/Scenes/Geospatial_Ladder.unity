@@ -1315,8 +1315,11 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.2
+      - m_Value: 0.3
         m_Name: Size
+        m_Overridden: 1
+      - m_Value: 1.2
+        m_Name: Particle Size
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -1332,7 +1335,10 @@ VisualEffect:
         m_Name: BezierC
         m_Overridden: 1
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 3.9999995, y: 1.2356019, z: 0, w: 1}
+        m_Name: Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -1340,8 +1346,11 @@ VisualEffect:
       - m_Value: 30
         m_Name: Total Step
         m_Overridden: 1
-      - m_Value: 40
+      - m_Value: 60
         m_Name: Number Per Step
+        m_Overridden: 1
+      - m_Value: 30
+        m_Name: Number Per Step -
         m_Overridden: 1
     m_Matrix4x4f:
       m_Array: []
@@ -1863,7 +1872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496339470}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5147,7 +5156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1353288289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8956,12 +8965,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _originAuthority: 0
-  _latitude: 38.745518801381834
-  _longitude: -9.124062754317553
+  _latitude: 38.72840523745454
+  _longitude: -9.152698393089983
   _height: 10
-  _ecefX: 4918041.151416679
-  _ecefY: -789861.1474391846
-  _ecefZ: 3970328.9266255517
+  _ecefX: 4918819.424355347
+  _ecefY: -792508.1131088546
+  _ecefZ: 3968847.0411214335
   _scale: 1
 --- !u!114 &2117456679
 MonoBehaviour:
@@ -9792,7 +9801,7 @@ Transform:
   m_GameObject: {fileID: 6162806809811408950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6521437779566119421}
@@ -10222,8 +10231,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.60627854, b: 0.028000057, a: 1}
-  m_Intensity: 20
+  m_Color: {r: 1, g: 0.32040966, b: 0, a: 1}
+  m_Intensity: 6
   m_Range: 24.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10350,8 +10359,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3151959522543614484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21, y: 112.4, z: -38}
+  m_LocalRotation: {x: -0, y: 0.779071, z: -0, w: 0.6269357}
+  m_LocalPosition: {x: 0.7, y: 125.5, z: -8.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -10364,7 +10373,7 @@ Transform:
   - {fileID: 496339470}
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 102.351, z: 0}
 --- !u!4 &6965485930025990332
 Transform:
   m_ObjectHideFlags: 0

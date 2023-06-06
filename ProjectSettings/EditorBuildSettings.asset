@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/ARCore Extensions/1.37.0/Geospatial Sample/Scenes/Geospatial.unity
     guid: 1ed15e9657253406185e4b2c7c5a4fc4
   - enabled: 0
     path: Assets/Samples/ARCore Extensions/1.37.0/Geospatial Sample/Scenes/Geospatial_polarbear.unity
     guid: f7540a0ffcba4459aad59d02e3548af9
+  - enabled: 1
+    path: Assets/Samples/ARCore Extensions/1.37.0/Geospatial Sample/Scenes/Geospatial_Ladder.unity
+    guid: fcaec8cd68da140eeb7c90f9cbe2c276
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 451d7b1e8293348d99f7f2d6e7e7db3f, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 53d79d8b910034b1487d11d89f381028, type: 2}
