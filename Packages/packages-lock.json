@@ -80,14 +80,10 @@
       "hash": "c27a931ef21c212686e5abd8bbf4f334a64ec9d5"
     },
     "com.holoi.xr.holokit": {
-      "version": "https://github.com/holoi/holokit-unity-sdk.git",
+      "version": "file:com.holoi.xr.holokit",
       "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.xr.arfoundation": "4.2.7",
-        "com.unity.xr.arkit": "4.2.7"
-      },
-      "hash": "f986a647e8577f3e66a7f577fcccb9d0d0f27c97"
+      "source": "embedded",
+      "dependencies": {}
     },
     "com.unity.burst": {
       "version": "1.8.2",

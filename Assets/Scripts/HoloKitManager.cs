@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HoloInteractive.XR.HoloKit;
+using HoloKit;
 
 public class HoloKitManager : MonoBehaviour
 {
@@ -24,15 +24,15 @@ public class HoloKitManager : MonoBehaviour
 
     public void SwitchScreenRenderMode()
     {
-        if (m_HoloKitCamera.ScreenRenderMode == ScreenRenderMode.Mono)
+        if (m_HoloKitCamera.RenderMode == HoloKitRenderMode.Mono)
         {
-            m_HoloKitCamera.ScreenRenderMode = ScreenRenderMode.Stereo;
+            m_HoloKitCamera.RenderMode = HoloKitRenderMode.Stereo;
             m_Canvas.SetActive(false);
             m_StereoCanvas.SetActive(true);
         }
         else
         {
-            m_HoloKitCamera.ScreenRenderMode = ScreenRenderMode.Mono;
+            m_HoloKitCamera.RenderMode = HoloKitRenderMode.Mono;
             m_Canvas.SetActive(true);
             m_StereoCanvas.SetActive(false);
         }
@@ -40,7 +40,7 @@ public class HoloKitManager : MonoBehaviour
 
     private void Update()
     {
-        if (m_HoloKitCamera.ScreenRenderMode == ScreenRenderMode.Mono && Screen.orientation != ScreenOrientation.Portrait)
+        if (m_HoloKitCamera.RenderMode == HoloKitRenderMode.Mono && Screen.orientation != ScreenOrientation.Portrait)
         {
             Screen.orientation = ScreenOrientation.Portrait;
         }
