@@ -709,7 +709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &193207846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,7 +866,7 @@ MonoBehaviour:
   resolution: 9
   customResolution: {x: 1280, y: 720}
   cameras:
-  - {fileID: 0}
+  - {fileID: 1400266904}
   texture: {fileID: 0}
   cameraManager: {fileID: 0}
   frameSkip: 0
@@ -2574,6 +2574,7 @@ GameObject:
   - component: {fileID: 691323910}
   - component: {fileID: 691323913}
   - component: {fileID: 691323911}
+  - component: {fileID: 691323914}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -2650,6 +2651,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RaycastPrefab: {fileID: 0}
+--- !u!114 &691323914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691323907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc98219a83dff145947365dc914d06e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tapThreshold: 0.2
+  swipeThreshold: 100
+  referenceDpi: 200
+  guiLayers:
+    serializedVersion: 2
+    m_Bits: 32
+  useTouch: 1
+  useHover: 1
+  useMouse: 1
+  useSimulator: 1
+  disableMouseEmulation: 1
+  recordFingers: 1
+  recordThreshold: 5
+  recordLimit: 10
 --- !u!1 &697834360
 GameObject:
   m_ObjectHideFlags: 0
@@ -5215,6 +5242,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382347799}
   m_CullTransparentMesh: 0
+--- !u!20 &1400266904 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5626992625800642046, guid: 8c3baeda8ec2e42179a64fba10a812b1, type: 3}
+  m_PrefabInstance: {fileID: 1151707988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1408947151
 GameObject:
   m_ObjectHideFlags: 0
