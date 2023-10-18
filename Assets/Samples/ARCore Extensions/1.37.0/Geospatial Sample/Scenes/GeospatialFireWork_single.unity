@@ -3689,7 +3689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1119870444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4949,8 +4949,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1353288290}
-  - component: {fileID: 1353288289}
   - component: {fileID: 1353288291}
+  - component: {fileID: 1353288292}
   m_Layer: 0
   m_Name: Firework Manager
   m_TagString: Untagged
@@ -4958,22 +4958,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1353288289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353288288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2264970904
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!4 &1353288290
 Transform:
   m_ObjectHideFlags: 0
@@ -5006,6 +4990,22 @@ MonoBehaviour:
   m_Firework3Prefab: {fileID: 2396624880742639166, guid: 7ce072fc561034904bef3b9ef1ca6f3c, type: 3}
   m_Monument: {fileID: 6162806809686733033}
   m_Firework3Window: {fileID: 1408947151}
+--- !u!114 &1353288292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353288288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2207277597
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1363286405
 GameObject:
   m_ObjectHideFlags: 0
@@ -5983,7 +5983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1515278362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6898,7 +6898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1688559087
 RectTransform:
   m_ObjectHideFlags: 0
