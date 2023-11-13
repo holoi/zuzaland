@@ -37,3 +37,4 @@ This project aims to launch a collective and interactive digital fireworks displ
 3. Open Xcode, open the folder and run Xcode to build app to your mobile device
 
 ## Reference
+1. [Get started with Geospatial Creator in Unity](https://www.youtube.com/watch?v=MDcyG9MAMAo)https://www.youtube.com/watch?v=MDcyG9MAMAo
